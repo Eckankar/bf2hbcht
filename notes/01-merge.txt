@@ -1,0 +1,11 @@
+Merge 2 paths without changing state
+
+
+                     v
+                  >v<<
+                  v>      --->
+               >v <^
+         --->   >    ^<
+         --->    v
+                ^>^<
+                 ^

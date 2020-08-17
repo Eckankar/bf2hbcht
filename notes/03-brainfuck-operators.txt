@@ -1,0 +1,105 @@
+This outlines how to implement the brainfuck operators in Half-Broken Car in Heavy Traffic.
+
+Each operator takes its input on the left, and outputs on the right. As such, you should be
+able to transpile a brainfuck program (which doesn't use as I/O) to HBCHT by first orienting the car
+(with orient.hb), then chaining together the implementation of the operators listed below, corresponding
+to the original program.
+
+Note; > and < take two steps instead of one. This effectively means that we only use every other cell on
+the tape - and, more importantly - every other cell on the tape is always a zero; which means that / always
+compares the current cell to zero; matching the semantics of [ ... ] in brainfuck.
+
+
+
+Operator > (does >> in HBCHT)
+                                       
+                                       
+                                       
+                                       
+  ---->     >>       ---->             
+                                       
+                                       
+                                       
+
+
+< (does << in HBCHT)
+                                       
+                                       
+             v                          
+         >v<<<                          
+  ---->      ^<                         
+          >          ---->             
+          ^                            
+                                       
+                                       
+
+
+
+
+
+Operator +
+                                   
+                                       
+                                       
+                                       
+                   v                   
+                >v<<                   
+  ---->     v>     ^<                  
+            >^<  >      ---->          
+            ^    ^                     
+                                       
+                                       
+                                       
+
+Operator -
+
+                                  
+                                  
+                                  
+  ---->    v     v                
+           v  >v<<                
+           >     ^<               
+           ^   >     ---->        
+               ^                  
+                                  
+                                  
+                                  
+
+
+Operator [ ... ]
+
+
+                                                                                                                          
+                                                (high enough up to clear the loop body)                                   
+                                                                                                                          
+                                                                              v                                           
+                        >v                         . . .                     <<                                           
+                                                                                                                          
+                                                                                                                          
+                         .                                                    .                                           
+                         .                                                    .                                           
+                         .                                                    .                                           
+                                                                                                                          
+                                                         loop body                                                        
+                                    v                                                                                     
+                                 >v<  v  <                                                      v                              
+                                 v> v<<       /     ---->   {   . . .   }  ---->  v          >v<<                              
+                              >v <^   ^<                                          >^<     >     ^<                             
+                         >     >    >    ^<                                       ^           >       ---->                    
+                         ^          ^                                                         ^                                
+             ---->              v                                                                                         
+                               ^>^<                                                                                       
+                                ^                                                                                         
+                                                                                                                          
+                                         .                                           .                                    
+                                         .                                           .                                    
+                                         .                                           .                                    
+                                                                                                                          
+                                                                                                                          
+                                         v                                                                                
+                                         v                                                                                
+                                         >                   . . .                   ^<                                   
+                                         ^                                                                                
+                                                                                                                          
+                                                (far enough down to clear the loop body)                                  
+                                                                                                                          
