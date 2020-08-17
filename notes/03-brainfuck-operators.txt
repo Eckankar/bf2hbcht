@@ -91,15 +91,15 @@ Operator [ ... ]
                                ^>^<                                                                                       
                                 ^                                                                                         
                                                                                                                           
-                                         .                                           .                                    
-                                         .                                           .                                    
-                                         .                                           .                                    
+                                              .                                           .                               
+                                              .                                           .                               
+                                              .                                           .                               
                                                                                                                           
                                                                                                                           
-                                             v                                                                            
-                                             v                                                                            
-                                             >                   . . .                   ^<                               
-                                             ^                                                                            
+                                              v                                                                           
+                                              v                                                                           
+                                              >                   . . .                   ^<                              
+                                              ^                                                                           
                                                                                                                           
                                                 (far enough down to clear the loop body)                                  
                                                                                                                           
