@@ -39,6 +39,23 @@ $ hbcht /tmp/mult_3_5.hb
 0: 15
 ```
 
+## Notes
+
+The brainfuck operations `,` (input to cell) and `.` (output from cell) are
+not supported, as HBCHT doesn't allow for input/output while running the
+program.
+
+For implementation reasons, the brainfuck program operates on every other cell.
+That means, the program `+>+>+`, which one would expect to write 1 to cells 0, 1
+and 2, actually writes to cells 0, 2 and 4:
+
+```
+$ echo '+>+>+' | ./bf2hbcht | hbcht -
+0: 1
+2: 1
+4: 1
+```
+
 ## How it works
 
 The principle behind how it works is as follows:
