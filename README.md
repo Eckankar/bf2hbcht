@@ -60,8 +60,8 @@ $ echo '+>+>+' | ./bf2hbcht | hbcht -
 
 The principle behind how it works is as follows:
 
-First the car is capture, no matter which direction it's going, and sent on the
-same path to the right.
+First the car is captured - no matter which direction it's going - and sent on
+the same path towards the right.
 
 For each brainfuck operator, a component has been made, where the car enters
 from the left, and exits from the right.
