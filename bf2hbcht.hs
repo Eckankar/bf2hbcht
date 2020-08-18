@@ -1,5 +1,3 @@
-import Debug.Trace (trace)
-
 -- Block <contents> <in-height> <out-height>
 data Block = Block [String] Int Int
 
